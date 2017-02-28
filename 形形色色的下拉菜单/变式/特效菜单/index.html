@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>特效菜单</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type = "text/javascript" src = "http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src = "index.js"></script>
+</head>
+<body>
+	<div id = "menuList" class = "navList"><!-- 一级菜单 -->
+		<a href="#">首页</a>
+		<a href="#">课程大厅</a>
+		<a href="#">学习中心</a>
+		<a href="#">个人信息</a>
+		<a href="#">关于我们</a>
+	</div>
+	<div id = "expandZone" class="expand"> <!-- 展开层 -->
+		<div class = "expdiv">	<!-- 展开层里的二级菜单集合 -->
+			<div class = "expdiv-list">
+				<a href="#">慕课网主页</a>
+			</div>
+			<div class = "expdiv-list">
+				<a href="#">前端课程</a>
+				<a href="#">手机开发</a>
+				<a href="#">后台开发</a>
+			</div>
+			<div class = "expdiv-list">
+				<a href="#">JavaScript</a>
+				<a href="#">CSS</a>
+				<a href="#">JQuery</a>
+			</div>
+			<div class = "expdiv-list">
+				<a href="#">个人信息</a>
+			</div>
+			<div class = "expdiv-list">
+				<a href="#">地址：00000</a>
+			</div>
+		</div>
+		<div id = "closeBtn" class = "close-btn"> 
+		<!-- 二级菜单里的关闭按钮 -->
+		</div>
+	</div>
+</body>
+</html>

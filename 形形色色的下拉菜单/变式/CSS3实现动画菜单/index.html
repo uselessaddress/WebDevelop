@@ -1,0 +1,169 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS3实现多级菜单</title>
+	<meta charset="utf-8">
+	<style type = "text/css">
+		.top_nav{
+			width:960px;
+			margin:60px auto;
+			border:1px solid #222;
+			background: linear-gradient(to bottom,#444,#111);
+			border-radius: 6px;
+			box-shadow: 0 2px 1px #777;
+			padding:0;
+			list-style: none;
+		}
+		/**/
+		.top_nav:before,.top_nav:after{
+			content:"";
+			display:table;
+		}
+		
+		.top_nav:after{
+			clear:both;
+		}
+		
+		.top_nav{
+			zoom: 1;/*IE6*/
+		}
+
+		.top_nav li{
+			float:left;
+			border-right:1px solid #222;
+			box-shadow: 1px 0 0 #444;
+			position: relative;
+		}
+		.top_nav li a{
+			float: left;
+			padding :15px 30px;
+			color: #999;
+			font:bold 12px;
+			text-decoration: none;
+			text-shadow: 0 1px 0 #000;
+		}
+		.top_nav li a:hover{
+			color:#fafafa;
+		}
+		.top_nav li ul{
+			position: absolute;
+			visibility: hidden;
+			list-style: none;
+			top:38px;
+			left:0;
+			z-index:1;
+			padding:0;
+			background-color: #444;
+			background:linear-gradient(#444,#111);
+			box-shadow: 0 -1 0 rgba(255,255,255,0.3);
+			border-radius: 3px;
+			opacity: 0;
+			margin:20px 0 0 0;
+			_margin:0; /*IE6*/
+			transition: all 0.2s ease-in-out;
+		}
+		.top_nav li:hover > ul{
+			opacity: 1;
+			visibility: visible;
+			margin:0;
+		}
+
+		.top_nav ul li{
+			float: none;
+			display: block;
+			border:0;
+			box-shadow: 0 1px 0 #111,0 2px 0 #666;
+		}
+		.top_nav ul a{
+			padding: 10px;
+			width: 130px;
+			display: block;
+			float:none;
+			_height:10px;/*IE6*/
+		}
+		.top_nav ul a:hover{
+			background-color: #0186ba;
+			background: linear-gradient(#04acec,#0186ba);
+		}
+
+		/*.top_nav ul li:first-child > a{
+			border-radius: 3px 3px 0 0;
+		}
+		.top_nav ul li:last-child > a{
+			border-radius: 0 0 3px 3px;
+		}*/
+		.top_nav ul li:first-child > a:before{
+			content: "";
+			position: absolute;
+			left:40px;
+			top:-6px;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+			border-bottom: 6px solid #444;
+		}
+		.top_nav ul li:first-child > a:hover:before{
+			border-bottom-color:#04acec;
+		}
+		
+		.top_nav ul ul{
+			top:0;
+			left: 150px;
+			margin:0 0 0 20px;
+			_margin:0; /*IE6*/
+			box-shadow: -1px 0 0 rgba(255,255,255,0.3);
+		}
+		.top_nav ul ul li:first-child a:before{
+			left: -6px;
+			top:50%;
+			margin-top: -6px;
+			border-left: 0;
+			border-bottom:6px solid transparent;
+			border-top:6px solid transparent;
+			border-right:6px solid #3b3b3b;
+		}
+		.top_nav ul ul li:first-child a:hover:before{
+			border-right-color: #0299d3;
+			border-bottom-color: transparent;
+		}
+	</style>
+	<!-- <script type = "text/javascript" src = "http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			if($.browser.msie && $.browser.version.substr(0,1)<7){
+				$('li').has('ul').mouseover(function(){
+					$(this).children('ul').css('visibility','visible');
+				}).mouseout(function(){
+					$(this).children('ul').css('visibility','hidden');
+				})
+			}
+		});
+	</script>  -->
+</head>
+<body>
+	<ul class="top_nav">
+		<li><a href="#">首页</a></li>
+		<li><a href="#">课程大厅</a></li>
+		<li><a href="#">学习中心</a>
+			<ul>
+				<li><a href="#">前端开发</a>
+					<ul>
+						<li><a href="#">javascript</a></li>
+						<li><a href="#">css</a></li>
+						<li><a href="#">jquery</a></li>
+					</ul>
+				</li>
+				<li><a href="#">手机开发</a>
+					<ul>
+						<li><a href="#">ios开发</a></li>
+						<li><a href="#">安卓开发</a></li>
+						<li><a href="#">wp开发</a></li>
+					</ul>
+				</li>
+				<li><a href="#">后台编程</a></li>
+			</ul>
+		</li>
+		<li><a href="#">关于我们</a></li>
+	</ul>
+</body>
+</html>
